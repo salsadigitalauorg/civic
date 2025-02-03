@@ -74,6 +74,7 @@ function _civictheme_library_info_alter__color_selector(array &$libraries, strin
         $libraries['css-variables']['css']['theme'] = [
           $stylesheet_path => [
             'preprocess' => FALSE,
+            'weight' => 10,
           ],
         ];
       }
