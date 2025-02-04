@@ -45,7 +45,7 @@ ENV WEBROOT=${WEBROOT} \
 
 # Adding more tools.
 RUN apk update \
-    && apk add pv python3 make gcc g++ diffutils ncurses pv tzdata \
+    && apk add pv python3 make gcc g++ diffutils ncurses pv tzdata rsync \
     && ln -sf python3 /usr/bin/python \
     && rm -rf /var/cache/apk/*
 

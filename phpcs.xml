@@ -36,11 +36,14 @@
     <!-- Exclude FE assets. -->
     <exclude-pattern>*\.css</exclude-pattern>
     <exclude-pattern>*\.min\.js</exclude-pattern>
+    <exclude-pattern>*\.data\.js</exclude-pattern>
+    <exclude-pattern>*\.utils\.js</exclude-pattern>
 
     <exclude-pattern>*\/dist\/*\.js</exclude-pattern>
     <exclude-pattern>\.storybook/*</exclude-pattern>
     <exclude-pattern>storybook-static/*</exclude-pattern>
-    <exclude-pattern>webpack/*</exclude-pattern>
+    <exclude-pattern>\.components-civictheme/*</exclude-pattern>
+    <exclude-pattern>components_combined/*</exclude-pattern>
 
     <!-- Exclude array-heavy files without any logic. -->
     <exclude-pattern>web\/modules\/custom\/cs_generated_content\/generated_content\/node\/civictheme_page_variations\/.*</exclude-pattern>

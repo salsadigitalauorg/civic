@@ -122,7 +122,6 @@ class CivicthemeCreateSubthemeScriptUnitTest extends ScriptUnitTestBase {
     $this->assertDirectoryExists($expected_new_theme_dir_full . 'assets');
     $this->assertDirectoryExists($expected_new_theme_dir_full . 'components');
     $this->assertDirectoryExists($expected_new_theme_dir_full . 'templates');
-    $this->assertDirectoryExists($expected_new_theme_dir_full . 'webpack');
     $this->assertFileExists($expected_new_theme_dir_full . '.eslintignore');
     $this->assertFileExists($expected_new_theme_dir_full . '.eslintrc.yml');
     $this->assertFileExists($expected_new_theme_dir_full . '.gitignore');
@@ -130,14 +129,14 @@ class CivicthemeCreateSubthemeScriptUnitTest extends ScriptUnitTestBase {
     $this->assertFileExists($expected_new_theme_dir_full . '.stylelintrc.json');
     $this->assertFileExists($expected_new_theme_dir_full . $newtheme_name . '.info.yml');
     $this->assertFileExists($expected_new_theme_dir_full . $newtheme_name . '.libraries.yml');
-    $this->assertFileExists($expected_new_theme_dir_full . 'gulpfile.js');
+    $this->assertFileExists($expected_new_theme_dir_full . 'build.js');
+    $this->assertFileExists($expected_new_theme_dir_full . 'vite.config.js');
     $this->assertFileExists($expected_new_theme_dir_full . 'composer.json');
     $this->assertFileExists($expected_new_theme_dir_full . 'package.json');
     $this->assertFileExists($expected_new_theme_dir_full . 'README.md');
     $this->assertFileExists($expected_new_theme_dir_full . 'screenshot.png');
 
-    $this->assertStringContainsString($expected_rel_path, (string) file_get_contents($expected_new_theme_dir_full . 'gulpfile.js'));
-    $this->assertStringContainsString($expected_rel_path, (string) file_get_contents($expected_new_theme_dir_full . 'webpack/theme_js.js'));
+    $this->assertStringContainsString($expected_rel_path, (string) file_get_contents($expected_new_theme_dir_full . 'build.js'));
 
     $composerjson_actual = json_decode((string) file_get_contents($expected_new_theme_dir_full . 'composer.json'), TRUE);
     $this->assertStringContainsString($composerjson['version'], $composerjson_actual['extra']['civictheme']['version']);
@@ -237,7 +236,6 @@ class CivicthemeCreateSubthemeScriptUnitTest extends ScriptUnitTestBase {
     $this->assertDirectoryExists($expected_new_theme_dir_full . 'assets');
     $this->assertDirectoryExists($expected_new_theme_dir_full . 'components');
     $this->assertDirectoryExists($expected_new_theme_dir_full . 'templates');
-    $this->assertDirectoryExists($expected_new_theme_dir_full . 'webpack');
     $this->assertFileExists($expected_new_theme_dir_full . '.eslintignore');
     $this->assertFileExists($expected_new_theme_dir_full . '.eslintrc.yml');
     $this->assertFileExists($expected_new_theme_dir_full . '.gitignore');
@@ -245,12 +243,13 @@ class CivicthemeCreateSubthemeScriptUnitTest extends ScriptUnitTestBase {
     $this->assertFileExists($expected_new_theme_dir_full . '.stylelintrc.json');
     $this->assertFileExists($expected_new_theme_dir_full . $newtheme_name . '.info.yml');
     $this->assertFileExists($expected_new_theme_dir_full . $newtheme_name . '.libraries.yml');
-    $this->assertFileExists($expected_new_theme_dir_full . 'gulpfile.js');
+    $this->assertFileExists($expected_new_theme_dir_full . 'build.js');
+    $this->assertFileExists($expected_new_theme_dir_full . 'vite.config.js');
     $this->assertFileExists($expected_new_theme_dir_full . 'package.json');
     $this->assertFileExists($expected_new_theme_dir_full . 'README.md');
     $this->assertFileExists($expected_new_theme_dir_full . 'screenshot.png');
 
-    $this->assertStringContainsString($expected_rel_path, (string) file_get_contents($expected_new_theme_dir_full . 'gulpfile.js'));
+    $this->assertStringContainsString($expected_rel_path, (string) file_get_contents($expected_new_theme_dir_full . 'build.js'));
 
     // Examples assertions.
     $this->assertDirectoryDoesNotExist($expected_new_theme_dir_full . 'components/01-atoms/demo-button');

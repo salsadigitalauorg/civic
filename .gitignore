@@ -16,7 +16,6 @@ web/themes/*
 !web/themes/contrib/
 web/themes/contrib/*
 !web/themes/contrib/civictheme
-web/themes/contrib/civictheme/lib/uikit
 !web/themes/custom/
 web/themes/custom/*
 !web/themes/custom/.gitkeep

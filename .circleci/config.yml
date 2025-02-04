@@ -146,7 +146,9 @@ job-build-isolated: &job-build-isolated
           sudo pecl install pcov
           echo "extension=pcov.so" | sudo tee -a /usr/local/etc/php/conf.d/pcov.ini
           echo "pcov.enabled=1" | sudo tee -a /usr/local/etc/php/conf.d/pcov.ini
-
+    - run:
+        name: Install rsync
+        command: sudo apt-get update && sudo apt-get install -y rsync
     - run:
         name: Assemble the codebase
         command: .devtools/assemble.sh

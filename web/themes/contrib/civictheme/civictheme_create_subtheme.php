@@ -208,9 +208,7 @@ function process_stub(string $dir, array $options): void {
   // Resolve CivicTheme's location relative to the new theme.
   $current_dir = __DIR__;
   $relative_dir = file_get_relative_dir($options['path'], $current_dir);
-  file_replace_file_content('../../contrib/civictheme/', $relative_dir, $dir . '/' . 'gulpfile.js');
-  file_replace_file_content('../../../contrib/civictheme/', $relative_dir, $dir . '/webpack/' . 'webpack.common.js');
-  file_replace_file_content('../../../contrib/civictheme/', $relative_dir, $dir . '/webpack/' . 'theme_js.js');
+  file_replace_file_content('../../contrib/civictheme/', $relative_dir, $dir . '/' . 'build.js');
   file_replace_file_content('../../../contrib/civictheme/', $relative_dir, $dir . '/' . 'package.json');
 
   // Adjust per-file settings.

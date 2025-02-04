@@ -26,9 +26,6 @@
     <exclude-pattern>build\/</exclude-pattern>
     <exclude-pattern>components</exclude-pattern>
     <exclude-pattern>dist\/</exclude-pattern>
-    <exclude-pattern>gulpfile.js</exclude-pattern>
-    <exclude-pattern>lib\/</exclude-pattern>
-    <exclude-pattern>webpack</exclude-pattern>
 
     <!-- Exclude theme assets. -->
     <exclude-pattern>web\/themes\/custom\/.*\/build\/.*</exclude-pattern>
